@@ -31,4 +31,3 @@ GitHub Actions publicerar då innehållet automatiskt.
 
 - `index.html` - startsidan som GitHub Pages publicerar.
 - `personlig-affarsplan-ai.html` - samma presentation med ursprungligt filnamn.
-- `assets/` - lokala bilder som används av presentationen.

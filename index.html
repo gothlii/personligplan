@@ -141,10 +141,7 @@
       position: relative;
       overflow: hidden;
       color: var(--white);
-      background:
-        linear-gradient(90deg, rgba(16, 16, 16, .98), rgba(16, 16, 16, .82) 50%, rgba(16, 16, 16, .18)),
-        url("assets/atea-ai-mognad.webp") center / cover no-repeat,
-        #171717;
+      background: #111111;
     }
 
     .hero .eyebrow { color: #ffb6bb; }
@@ -176,13 +173,6 @@
     }
     .band-dark .body, .band-dark .lead { color: rgba(255, 255, 255, .78); }
 
-    #modell {
-      background:
-        linear-gradient(90deg, rgba(21, 21, 21, .98), rgba(21, 21, 21, .90) 54%, rgba(21, 21, 21, .62)),
-        url("assets/atea-ai-blur.webp") right center / min(46vw, 620px) auto no-repeat,
-        #151515;
-    }
-
     .split {
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
@@ -195,6 +185,7 @@
       gap: 16px;
       margin-top: 34px;
     }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 34px; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
@@ -246,42 +237,6 @@
       font-weight: 700;
     }
 
-    .visual-card {
-      overflow: hidden;
-      border-radius: 8px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .visual-card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-    }
-
-    .visual-card figcaption {
-      padding: 12px 14px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .photo-quote {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .photo-quote img {
-      width: 180px;
-      height: 220px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
     .ladder {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -318,6 +273,37 @@
       border-radius: 8px;
       background: var(--white);
       border: 1px solid var(--line);
+    }
+
+    .ap-map {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .ap-card {
+      min-height: 178px;
+      padding: 20px;
+      border-radius: 8px;
+      color: var(--white);
+      background: #202020;
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .ap-card span {
+      display: block;
+      margin-bottom: 14px;
+      color: #ffb6bb;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ap-card p {
+      margin: 0;
+      color: rgba(255,255,255,.74);
+      font-size: 15px;
     }
 
     .step .num {
@@ -411,20 +397,6 @@
       text-transform: uppercase;
     }
 
-    .source-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px 28px;
-      margin-top: 28px;
-      color: rgba(255, 255, 255, .72);
-      font-size: 14px;
-    }
-
-    .source-list div {
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, .14);
-    }
-
     .controls {
       position: fixed;
       right: 18px;
@@ -449,13 +421,11 @@
     @media (max-width: 920px) {
       nav { max-width: calc(100vw - 24px); overflow-x: auto; }
       section { min-height: auto; padding-top: 92px; }
-      .hero { background: linear-gradient(180deg, rgba(16,16,16,.95), rgba(16,16,16,.78)), url("assets/atea-ai-mognad.webp") center / cover no-repeat, #171717; }
-      .split, .grid-3, .grid-4, .flow, .model, .timeline, .source-list { grid-template-columns: 1fr; }
+      .hero { background: #111111; }
+      .split, .grid-2, .grid-3, .grid-4, .flow, .model, .timeline, .ap-map { grid-template-columns: 1fr; }
       .ladder { grid-template-columns: 1fr; min-height: auto; }
       .rung { min-height: auto; }
       .metrics { grid-template-columns: 1fr; }
-      .photo-quote { grid-template-columns: 1fr; }
-      .photo-quote img { width: 100%; height: 280px; }
     }
 
     @media print {
@@ -470,12 +440,10 @@
   <nav aria-label="Avsnitt">
     <a href="#start">Start</a>
     <a href="#tes">Tes</a>
-    <a href="#basformaga">Basförmåga</a>
     <a href="#strategi">Strategi</a>
     <a href="#modell">Modell</a>
     <a href="#plan">Plan</a>
     <a href="#ledarskap">Ledarskap</a>
-    <a href="#kallor">Källor</a>
   </nav>
 
   <section class="hero" id="start">
@@ -487,7 +455,6 @@
         <span class="pill">Erik Andersson</span>
         <span class="pill">Chef AI Enablement</span>
         <span class="pill">Effekt och kostnadshemtagning</span>
-        <span class="pill">Bilder: Atea kundcase</span>
       </div>
     </div>
   </section>
@@ -507,34 +474,15 @@
     </div>
   </section>
 
-  <section class="band-white" id="basformaga">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">AI som basförmåga</p>
-        <h2>Det externa caset stärker samma berättelse.</h2>
-        <p class="lead">Atea beskriver Svenska Spels AI-resa som en förflyttning där AI blir en organisationsförmåga, inte ett separat verktyg. Det är precis där effekthemtagningen blir avgörande.</p>
-        <p class="body">När engagemanget redan finns i forum, champions och konkreta initiativ behöver nästa steg bli mer systematiskt: tydligare prioriteringar, gemensamma arbetssätt, bättre effektmätning och starkare koppling mellan AI-initiativ och affärsmål.</p>
-      </div>
-      <figure class="visual-card">
-        <img src="assets/atea-ai-strategi.webp" alt="Workshopmiljö från Atea kundcase om Svenska Spels AI-arbete">
-        <figcaption>Foto från Atea kundcase. Text: Johan Bentzel. Foto: Linnea Ronström.</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <section id="strategi">
     <div class="wrap">
       <p class="eyebrow">Koppling till AI-strategin</p>
-      <h2>Strategin pekar ut tre värdearenor.</h2>
-      <p class="lead">Effekthemtagningen behöver spegla samma målbild som AI Enablement redan driver: AI ska vara en möjliggörare för affärsplanen, inte ett separat teknikspår.</p>
-      <div class="grid-3">
+      <h2>Strategin pekar ut två värdearenor.</h2>
+      <p class="lead">Effekthemtagningen behöver spegla samma målbild som AI Enablement redan driver: AI ska vara en möjliggörare för affärsplanen, med tydlig koppling till effektivitet och kundvärde.</p>
+      <div class="grid-2">
         <div class="tile accent-red">
           <strong>Effektivitet</strong>
           <p>AI reducerar manuellt arbete och väntetider. Det frigör tid, höjer kapacitet och gör att bättre beslut kan tas snabbare.</p>
-        </div>
-        <div class="tile accent-blue">
-          <strong>Analytics on demand</strong>
-          <p>Affären får snabbare tillgång till relevanta insikter genom data, semantik och agentisk analys snarare än manuell rapportering.</p>
         </div>
         <div class="tile accent-green">
           <strong>Kundupplevelse</strong>
@@ -545,38 +493,36 @@
   </section>
 
   <section class="band-dark" id="modell">
-    <div class="wrap split">
+    <div class="wrap">
       <div>
         <p class="eyebrow">Mätmodell</p>
-        <h2>Från användning till effektbevis.</h2>
-        <p class="lead">Det räcker inte att mäta hur många som använder ett AI-verktyg. Vi behöver mäta hur arbetet, besluten och resultaten faktiskt förändras.</p>
+        <h2>Från bred aktivering till effektstyrning.</h2>
+        <p class="lead">Nästa steg i mitt uppdrag är mer detaljerat: skapa förutsättningarna som gör att vi kan mäta AI-kostnader, fokusera rätt initiativ och visa vilka effekter som faktiskt tas hem.</p>
         <div class="metrics">
           <div class="metric">
-            <strong>Baseline</strong>
-            <p>Välj 3-5 återkommande arbetsflöden och mät nuläge: tid per uppgift, ledtid, kvalitet, kostnad och kund-/medarbetareffekt.</p>
+            <strong>Kostnadsbild</strong>
+            <p>Synliggör tokens, licenser, modellval, plattform och drift per användningsfall så att kostnad kan följas där nyttan uppstår.</p>
           </div>
           <div class="metric">
-            <strong>Speed + quality</strong>
-            <p>Mät snabbhet tillsammans med kvalitet, annars riskerar vi att bara flytta problemet från produktion till granskning.</p>
+            <strong>Effektlogik</strong>
+            <p>Definiera vilken förändring i arbetssätt, beslut eller kvalitet som ska bevisa att ett AI-initiativ är värt att skala.</p>
           </div>
           <div class="metric">
-            <strong>Cohorts</strong>
-            <p>Jämför liknande team, sprintar eller processer med hög och låg AI-användning för att isolera effekt bättre.</p>
+            <strong>Prioritering</strong>
+            <p>Flytta fokus från många inspirerande spår till färre initiativ där effekt, kostnad, risk och ägarskap är tillräckligt tydliga.</p>
           </div>
           <div class="metric">
-            <strong>Kostnad per nytta</strong>
-            <p>Följ tokens, licenser, modellval och driftkostnad mot frigjord tid, ökad kapacitet, riskreduktion och kundvärde.</p>
+            <strong>Uppföljningsrytm</strong>
+            <p>Etablera en enkel rytm där verksamhet, Tech, ekonomi och AIE följer upp effekt och kostnad löpande.</p>
           </div>
         </div>
       </div>
-      <div>
-        <div class="ladder" aria-label="Effekttrappa">
-          <div class="rung" style="--i: 1; --c: var(--red);"><b>1</b><span>Use case</span></div>
-          <div class="rung" style="--i: 2; --c: var(--blue);"><b>2</b><span>Baseline</span></div>
-          <div class="rung" style="--i: 3; --c: var(--green);"><b>3</b><span>Uppföljning</span></div>
-          <div class="rung" style="--i: 4; --c: var(--gold);"><b>4</b><span>Beslut</span></div>
-          <div class="rung" style="--i: 5; --c: #6c3bbf;"><b>5</b><span>Skalning</span></div>
-        </div>
+      <div class="ap-map" aria-label="Koppling till personlig affärsplan">
+        <div class="ap-card"><span>1. Zooma ut</span><p>AI gör skapande billigare och snabbare. Då behöver styrning av kostnad och effekt bli en ledningsfråga.</p></div>
+        <div class="ap-card"><span>2. Zooma in</span><p>För Svenska Spel betyder det att AI-initiativ måste kopplas tydligare till affärsmål, risk och prioritering.</p></div>
+        <div class="ap-card"><span>3. Mitt bidrag</span><p>Jag bygger arbetssättet som gör effekt och kostnad mätbara innan vi skalar.</p></div>
+        <div class="ap-card"><span>4. Mitt ledarskap</span><p>Jag behöver gå från att främst mobilisera brett till att skapa fokus, kravställning och detaljerad uppföljning.</p></div>
+        <div class="ap-card"><span>5. Mitt pris</span><p>Jag behöver mandat, ekonomi-/Tech-stöd, data och tid att etablera arbetssättet ordentligt.</p></div>
       </div>
     </div>
   </section>
@@ -588,7 +534,7 @@
       <div class="model">
         <div class="model-block">
           <h3>Effektkontrakt per initiativ</h3>
-          <p class="body">Varje initiativ ska ha ett enkelt kontrakt innan det skalas.</p>
+          <p class="body">Varje initiativ ska ha ett enkelt kontrakt innan det får mer tid, pengar eller teknisk kapacitet.</p>
           <ul>
             <li>Vilket arbetsflöde eller beslut ska förändras?</li>
             <li>Vilken baseline jämför vi mot?</li>
@@ -597,13 +543,13 @@
           </ul>
         </div>
         <div class="model-block">
-          <h3>FinOps för AI</h3>
-          <p class="body">När kostnad flyttas från människa till teknik behövs styrning som syns i vardagen.</p>
+          <h3>Kostnadshemtagning</h3>
+          <p class="body">När kostnad flyttas från människa till teknik behöver nyttan vara lika synlig som förbrukningen.</p>
           <ul>
             <li>Token- och licenskostnader följs per användningsfall.</li>
             <li>Modellval matchas mot risk, kvalitet och kostnad.</li>
-            <li>Återanvändbara agentmönster minskar lokal överbyggnad.</li>
-            <li>Kostnad kopplas till faktiskt beteende och resultat.</li>
+            <li>Frigjord tid kopplas till tydligt beslut: mer kapacitet, högre kvalitet eller lägre kostnad.</li>
+            <li>Kostnad följs tillsammans med förändrat arbetssätt och resultat.</li>
           </ul>
         </div>
       </div>
@@ -613,33 +559,33 @@
   <section id="plan">
     <div class="wrap">
       <p class="eyebrow">Mitt bidrag och åtagande</p>
-      <h2>Jag vill etablera en praktisk effektmotor för AI.</h2>
-      <p class="lead">Min roll blir att skapa riktning, metod och tempo så att verksamheten kan äga effekten, medan AI Enablement ger struktur, stöd, plattformar och lärande.</p>
+      <h2>Jag vill skapa förutsättningarna för mätbar AI-effekt.</h2>
+      <p class="lead">Mitt bidrag är att ta nästa steg efter adoptionen: bygga arbetssättet, detaljerna och styrningen som gör att vi kan välja färre saker, mäta kostnader och rikta kraften mot bevisbar effekt.</p>
       <div class="flow">
         <div class="step">
           <span class="num">1</span>
-          <h3>Välj flöden</h3>
-          <p>Prioritera återkommande arbetsflöden där AI redan används eller där potentialen är tydlig.</p>
+          <h3>Välj fokus</h3>
+          <p>Prioritera få initiativ där affärsnytta, kostnad, risk och ägarskap kan göras konkreta.</p>
         </div>
         <div class="step">
           <span class="num">2</span>
-          <h3>Sätt baseline</h3>
-          <p>Mät nuläge på tid, ledtid, kvalitet, kostnad, risk och upplevd nytta.</p>
+          <h3>Bygg mätbarhet</h3>
+          <p>Definiera baseline, mätpunkter och datakällor innan lösningen skalar.</p>
         </div>
         <div class="step">
           <span class="num">3</span>
-          <h3>Följ i drift</h3>
-          <p>Kombinera systemdata, pulsmätning och chefsobservation för att fånga verklig förändring.</p>
+          <h3>Synliggör kostnad</h3>
+          <p>Få fram förbrukning, modellval och teknisk kostnad per användningsfall.</p>
         </div>
         <div class="step">
           <span class="num">4</span>
-          <h3>Ta hem värde</h3>
-          <p>Besluta vad frigjord tid ska användas till: mer kapacitet, bättre kvalitet, kortare ledtid eller lägre kostnad.</p>
+          <h3>Kravställ beslut</h3>
+          <p>Gör det tydligt vad som ska hända med frigjord tid och vilken effekt som ska räknas hem.</p>
         </div>
         <div class="step">
           <span class="num">5</span>
-          <h3>Skala lärandet</h3>
-          <p>Sprid mönster, mätetal, agentinstruktioner och goda exempel via forum och champions.</p>
+          <h3>Skala disciplinen</h3>
+          <p>Gör metoden återanvändbar så varje nytt AI-initiativ startar med effekt- och kostnadslogik.</p>
         </div>
       </div>
     </div>
@@ -648,27 +594,27 @@
   <section class="band-white">
     <div class="wrap">
       <p class="eyebrow">2026-upplägg</p>
-      <h2>Fyra steg från rörelse till styrning.</h2>
+      <h2>Fyra steg från rörelse till fokus.</h2>
       <div class="timeline">
         <div class="phase" style="--c: var(--red);">
           <small>September</small>
-          <h3>Rama in</h3>
-          <p class="body">Välj 3-5 kandidater från AI-forum och Tech. Definiera baseline, ägare och hypotes för varje initiativ.</p>
+          <h3>Avgränsa</h3>
+          <p class="body">Välj 2-3 initiativ där vi kan testa effekt- och kostnadsstyrning på riktigt, inte bara som rapportering.</p>
         </div>
         <div class="phase" style="--c: var(--blue);">
           <small>Oktober</small>
-          <h3>Mäta i vardagen</h3>
-          <p class="body">Testa mätpaketet med systemdata, pulsmätning och observation. Följ även konsumtionskostnad och modellval.</p>
+          <h3>Detaljera</h3>
+          <p class="body">Ta fram baseline, kostnadsmodell, mätpunkter, ansvar och beslutslogik tillsammans med Tech och ekonomi.</p>
         </div>
         <div class="phase" style="--c: var(--green);">
           <small>November</small>
-          <h3>Besluta om hemtagning</h3>
-          <p class="body">Visa vilka effekter som är bevisade, vilka som kräver justering och vad som ska skalas eller stoppas.</p>
+          <h3>Följa upp</h3>
+          <p class="body">Visa vad som faktiskt har förändrats i arbete, kostnad, kvalitet och kapacitet, och vad som saknas.</p>
         </div>
         <div class="phase" style="--c: var(--gold);">
           <small>December</small>
-          <h3>Etablera styrmodell</h3>
-          <p class="body">Förankra mall, ansvar och rapportering inför 2027 så att nya AI-initiativ startar med effektlogik från dag ett.</p>
+          <h3>Sätta standard</h3>
+          <p class="body">Förankra arbetssättet inför 2027 så att effekt och kostnad blir en naturlig del av AI Enablement.</p>
         </div>
       </div>
     </div>
@@ -678,28 +624,21 @@
     <div class="wrap split">
       <div>
         <p class="eyebrow">Mitt ledarskap</p>
-        <h2>Från expert till katalysator.</h2>
-        <p class="lead">För att lyckas behöver jag växla mellan tre ledarskapslägen: expertens skärpa, achieverns riktning och katalysatorns förmåga att skapa ägarskap hos andra.</p>
+        <h2>Från mobilisering till fokuserad effektstyrning.</h2>
+        <p class="lead">Jag har lagt mycket kraft på ledningsgrupper, utbildning och att få igång rörelsen. Nu behöver mitt ledarskap bli mer konkret, kravställande och uthålligt i detaljerna.</p>
       </div>
       <div class="grid-3" style="grid-template-columns: 1fr;">
-        <div class="metric photo-quote">
-          <img src="assets/atea-erik-ai.webp" alt="Erik Andersson i Atea kundcase om AI på Svenska Spel">
-          <div>
-            <strong>Göra resan trygg och konkret</strong>
-            <p>Min ledaruppgift är att hålla ihop målbild, styrning och lärande så att AI blir något människor kan använda, inte något som händer ovanför dem.</p>
-          </div>
+        <div class="metric">
+          <strong>Mer fokus, färre spår</strong>
+          <p>Jag behöver våga prioritera hårdare och säga nej till initiativ där effekt, ansvar eller kostnad är för otydligt.</p>
         </div>
         <div class="metric">
-          <strong>Zooma ut</strong>
-          <p>Hålla ihop omvärld, affärsplan, teknikutveckling, kostnadsbild och organisationsförmåga.</p>
+          <strong>Mer detalj, mindre scen</strong>
+          <p>Jag behöver lägga mer tid nära arbetet: mätpunkter, kostnadsdata, modellval, uppföljning och hemtagning.</p>
         </div>
         <div class="metric">
-          <strong>Zooma runt</strong>
-          <p>Skapa win-win mellan KL, AO/KF, Techledning, DevEx, compliance, ekonomi och AI-forum.</p>
-        </div>
-        <div class="metric">
-          <strong>Zooma in</strong>
-          <p>Fatta tydliga beslut om prioritering, mätetal, ansvar och vilka beteenden som behöver ändras.</p>
+          <strong>Mer ansvar i linjen</strong>
+          <p>Jag behöver skapa tydliga förväntningar på vem som äger effekten och vad som händer när AI frigör tid.</p>
         </div>
       </div>
     </div>
@@ -712,11 +651,11 @@
       <div class="grid-4">
         <div class="tile accent-red">
           <strong>Mandat</strong>
-          <p>Rätt att kräva baseline och effektmål innan större AI-initiativ skalas.</p>
+          <p>Rätt att kräva baseline, kostnadsbild och effektmål innan större AI-initiativ skalas.</p>
         </div>
         <div class="tile accent-blue">
           <strong>Tid i linjen</strong>
-          <p>AI-forum och champions behöver skyddad tid för test, lärande och uppföljning.</p>
+          <p>Berörda team behöver skyddad tid för mätning, uppföljning och förändrade arbetssätt.</p>
         </div>
         <div class="tile accent-green">
           <strong>Ekonomipartner</strong>
@@ -726,23 +665,6 @@
           <strong>Gemensam plattform</strong>
           <p>Agentinfrastruktur, dataåtkomst, säkerhet, modellstyrning och återanvändbara mönster.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band-dark" id="kallor">
-    <div class="wrap">
-      <p class="eyebrow">Källkoppling</p>
-      <h2>Byggt på ditt underlag.</h2>
-      <p class="lead">Summeringen väver ihop din verksamhetsutmaning med AI Enablements målbild, KL-materialets mätprinciper, TechLed-workshopens effekthemtagning och LU-modulens struktur för personlig affärsplan.</p>
-      <div class="source-list">
-        <div>Verksamhetsutmaning o personlig AP(1).pdf - syfte, upplägg och AP-steg.</div>
-        <div>Eriks tankar.png - formulering av din utmaning och strategikoppling.</div>
-        <div>2026-02-10 AIE KL Workshop 1 - målbild, mätetal, mätmetod och AI Adoption.</div>
-        <div>2026-06-04 / 2026-06-17 AIE KL - höstens fokus, styrelseinput, huvudbudskap och förutsättningar.</div>
-        <div>AIE Adoption Workshop TechLed 31 aug 2026 - agentinfrastruktur, Tech-frågor, FinOps och effekthemtagning.</div>
-        <div>Svenska Spel LU modul 3 Grupp 6 - personlig affärsplan, Leadership Agility och övningsfrågorna.</div>
-        <div>Atea kundcase, publicerad juni 2026 - bilder och extern formulering av AI som basförmåga.</div>
       </div>
     </div>
   </section>
