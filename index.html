@@ -381,6 +381,19 @@
 
     .metric p { color: rgba(255, 255, 255, .68); }
 
+    .leadership-panel {
+      padding: clamp(24px, 4vw, 42px);
+      border-radius: var(--radius-card);
+      background: linear-gradient(135deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .045));
+      border: 1px solid rgba(255, 255, 255, .20);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .22);
+    }
+
+    .leadership-panel h2 {
+      max-width: 960px;
+      margin-bottom: 28px;
+    }
+
     .model {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -444,7 +457,6 @@
   <nav aria-label="Avsnitt" role="tablist">
     <a href="#start">Start</a>
     <a href="#tes">Tes</a>
-    <a href="#strategi">Strategi</a>
     <a href="#modell">Modell</a>
     <a href="#plan">Plan</a>
     <a href="#ledarskap">Ledarskap</a>
@@ -469,6 +481,7 @@
         <p class="eyebrow">Kärntes</p>
         <h2>Vi behöver förstå vad vår AI faktiskt kostar.</h2>
         <p class="body">AI-användningen växer, men vår förmåga att förstå kostnaden växer inte i samma takt. När fler initiativ använder modeller, agenter, data och infrastruktur behöver vi bättre insyn i vad som driver kostnad.</p>
+        <p class="body">När vi dessutom automatiserar arbete som människor gör idag behöver vi förstå att AI-kostnaden inte springer iväg mer än den mänskliga kostnad den ska avlasta eller förbättra.</p>
         <p class="body">Min roll som chef är att skapa riktning och förutsättningar för att organisationen etablerar en praktisk förmåga att följa kostnaden för AI-initiativ - från compute, tokens och modellval till kostnad per användningsfall.</p>
       </div>
       <div class="quote">
@@ -479,32 +492,12 @@
     </div>
   </section>
 
-  <section id="strategi">
-    <div class="wrap">
-      <p class="eyebrow">Koppling till AI-strategin</p>
-      <h2>Strategin pekar ut två värdearenor.</h2>
-      <p class="lead">När AI ska bidra till effektivitet och kundvärde behöver vi förstå ekonomin bakom initiativen. Kostnadstransparens gör det lättare att prioritera, optimera och skala det som faktiskt är värt att växa.</p>
-      <div class="grid-2">
-        <div class="tile accent-red">
-          <span class="badge badge-neutral">Värdearena</span>
-          <strong>Effektivitet</strong>
-          <p>För att förstå effektivitet behöver vi se både kostnaden för AI-användningen och vilken kapacitet, kvalitet eller tid den faktiskt frigör.</p>
-        </div>
-        <div class="tile accent-green">
-          <span class="badge badge-neutral">Värdearena</span>
-          <strong>Kundupplevelse</strong>
-          <p>För kundnära AI behöver kostnad, modellval och skalning kunna vägas mot kvalitet, risk och den kundnytta vi vill skapa.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="band-dark" id="modell">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Mätmodell</p>
+        <p class="eyebrow">Koppling till AI-strategin och mätmodell</p>
         <h2>Först kostnad. Därefter värde.</h2>
-        <p class="lead">Först behöver organisationen kunna förstå vad våra AI-initiativ kostar, vad som driver kostnaden och hur kostnaden förändras när användningen skalar. Därefter kan vi bättre avgöra vad vi får tillbaka, vilka initiativ som bör växa och var AI skapar verklig verksamhetsnytta.</p>
+        <p class="lead">AI-strategin pekar mot effektivitet och kundvärde. För att kunna skala med kontroll behöver vi först förstå vad initiativen kostar, vad som driver kostnaden och hur kostnaden förändras när användningen växer.</p>
       </div>
       <div class="ap-map" aria-label="Koppling till personlig affärsplan">
         <div class="ap-card"><span>1. Zooma ut</span><p>AI skalar snabbt och kostnader flyttar in i modeller, agenter, data och plattformar.</p></div>
@@ -512,37 +505,6 @@
         <div class="ap-card"><span>3. Mitt bidrag</span><p>Jag säkerställer riktning, prioritering och förutsättningar för att förmågan etableras.</p></div>
         <div class="ap-card"><span>4. Mitt ledarskap</span><p>Jag går från att mobilisera brett till att skapa tydlighet, fokus och ägarskap.</p></div>
         <div class="ap-card"><span>5. Mitt pris</span><p>Jag behöver mandat, rätt samverkan och tid för organisationen att bygga förmågan.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band-white">
-    <div class="wrap">
-      <p class="eyebrow">Principer</p>
-      <h2>Ett gemensamt sätt att förstå AI-ekonomi.</h2>
-      <div class="model">
-        <div class="model-block">
-          <span class="badge badge-success">Arbetssätt</span>
-          <h3>Kostnadsbild per användningsfall</h3>
-          <p class="body">Organisationen behöver en gemensam bild av vilka kostnader som är relevanta att följa för olika typer av AI-initiativ.</p>
-          <ul>
-            <li>Vilka kostnadsdrivare behöver vi förstå?</li>
-            <li>Hur förändras kostnaden när användningen ökar?</li>
-            <li>Vilken kostnadsnivå är rimlig för användningsfallet?</li>
-            <li>Vem äger uppföljningen i verksamhet och Tech?</li>
-          </ul>
-        </div>
-        <div class="model-block">
-          <span class="badge badge-attention">Styrning</span>
-          <h3>Kostnad och värde</h3>
-          <p class="body">När kostnadsbilden finns kan vi börja väga den mot användning, kvalitet, tidsbesparing och verksamhetseffekt.</p>
-          <ul>
-            <li>Vad får vi tillbaka för pengarna?</li>
-            <li>Vilka initiativ bör optimeras innan de skalas?</li>
-            <li>Var behöver vi byta modell, arbetssätt eller ambitionsnivå?</li>
-            <li>Vilka initiativ ger bäst beslutsunderlag för fortsatt prioritering?</li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>
@@ -588,24 +550,23 @@
   </section>
 
   <section class="band-dark" id="ledarskap">
-    <div class="wrap split">
-      <div>
+    <div class="wrap">
+      <div class="leadership-panel">
         <p class="eyebrow">Mitt ledarskap</p>
-        <h2>Från mobilisering till kostnadsförståelse.</h2>
-        <p class="lead">Första fasen handlade om att hjälpa organisationen att komma igång med AI. Nästa steg är att skapa riktning och förutsättningar för den ekonomiska och tekniska förståelse som krävs för att skala AI ansvarsfullt och värdeskapande.</p>
-      </div>
-      <div class="grid-3" style="grid-template-columns: 1fr;">
-        <div class="metric">
-          <strong>Tydlig ambition</strong>
-          <p>Jag behöver sätta förväntan på vilken kostnadsförståelse vi ska ha när AI-användningen växer.</p>
-        </div>
-        <div class="metric">
-          <strong>Rätt förutsättningar</strong>
-          <p>Teamen behöver kunna arbeta med detaljer som mätpunkter, kostnadsdata, modellval och uppföljning. Det behöver jag stödja och bereda väg för.</p>
-        </div>
-        <div class="metric">
-          <strong>Tydligt ägarskap</strong>
-          <p>Jag behöver säkerställa att ansvar finns i rätt delar av organisationen och att resultatet används i prioritering och skalning.</p>
+        <h2>Från bred adoption och acceleration till fokus på detaljerna.</h2>
+        <div class="grid-3">
+          <div class="metric">
+            <strong>Tydlig ambition</strong>
+            <p>Jag behöver sätta förväntan på vilken kostnadsförståelse vi ska ha när AI-användningen växer.</p>
+          </div>
+          <div class="metric">
+            <strong>Rätt förutsättningar</strong>
+            <p>Teamen behöver kunna arbeta med detaljer som mätpunkter, kostnadsdata, modellval och uppföljning. Det behöver jag stödja och bereda väg för.</p>
+          </div>
+          <div class="metric">
+            <strong>Tydligt ägarskap</strong>
+            <p>Jag behöver säkerställa att ansvar finns i rätt delar av organisationen och att resultatet används i prioritering och skalning.</p>
+          </div>
         </div>
       </div>
     </div>
