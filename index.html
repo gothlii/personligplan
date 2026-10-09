@@ -180,6 +180,44 @@
     }
     .hero .lead { color: rgba(255, 255, 255, .88); }
     .hero h1 { max-width: 1220px; }
+    .hero-accent { color: var(--svs-core-60); }
+    .hero-outcome {
+      max-width: 820px;
+      margin-top: 24px;
+      padding-left: 16px;
+      border-left: 3px solid var(--primary);
+      font-size: 18px;
+    }
+    .hero-link {
+      display: inline-flex;
+      gap: 18px;
+      margin-top: 28px;
+      color: #ffffff;
+      font-weight: 800;
+      text-underline-offset: 5px;
+    }
+    .deliverable {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--stroke-low);
+      font-size: 15px;
+    }
+    .deliverable strong { display: block; margin-bottom: 4px; color: var(--svs-core-35); }
+    .section-summary { margin-top: 40px; }
+    .section-summary .body:last-child { margin-bottom: 0; }
+    .model-block.challenge { margin-top: 28px; border-left: 6px solid var(--primary); }
+    .challenge h3 { max-width: 980px; font-size: clamp(22px, 2.5vw, 30px); }
+    .challenge .body { max-width: 980px; }
+    .challenge-conclusion { margin: 18px 0 0; max-width: 980px; font-weight: 700; }
+    .leadership-shift {
+      margin: 28px 0 0;
+      padding-left: 16px;
+      border-left: 3px solid var(--primary);
+      font-size: clamp(18px, 2vw, 23px);
+    }
+    .success-line { max-width: 900px; margin: 24px 0 0; font-size: 18px; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--attention-75); outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     .hero .meta {
       display: flex;
       flex-wrap: wrap;
@@ -310,7 +348,7 @@
 
     .flow {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 10px;
       margin-top: 28px;
     }
@@ -463,96 +501,123 @@
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-  <nav aria-label="Avsnitt" role="tablist">
-    <a href="#start">Start</a>
-    <a href="#tes">Tes</a>
-    <a href="#modell">Modell</a>
-    <a href="#plan">Plan</a>
-    <a href="#ledarskap">Ledarskap</a>
+  <nav aria-label="Avsnitt">
+    <a href="#start">Ambition</a>
+    <a href="#tes">Zooma ut</a>
+    <a href="#modell">Zooma in</a>
+    <a href="#plan">Mitt bidrag</a>
+    <a href="#ledarskap">Mitt ledarskap</a>
+    <a href="#pris">Mitt pris</a>
   </nav>
 
   <section class="hero" id="start">
     <div class="wrap">
-      <p class="eyebrow">Personlig affärsplan 2026</p>
-      <h1>Ökad ekonomisk kontroll för rätt uppskalning med AI</h1>
-      <p class="lead">Min verksamhetsutmaning är att etablera förmågan att mäta och förstå kostnaden för våra AI-initiativ - från compute och tokens till faktisk kostnad per användningsfall.</p>
+      <p class="eyebrow">Personlig affärsplan · Erik Andersson</p>
+      <h1>Jag bygger förmågan<br><span class="hero-accent">att skapa och skala AI-värde.</span></h1>
+      <p class="lead">Jag vill utveckla AI Enablement från att möjliggöra AI-användning till att bygga en organisation som systematiskt skapar, mäter och skalar affärsvärde med AI.</p>
+      <div class="hero-outcome">Min långsiktiga ambition: AI som en integrerad del av hur Svenska Spel når sina affärs- och verksamhetsmål.</div>
       <div class="meta">
-        <span class="pill">Erik Andersson</span>
         <span class="pill">AI Enablement</span>
-        <span class="pill">Kostnadstransparens</span>
+        <span class="pill">Skapa · mäta · skala</span>
+        <span class="pill">Framdrift genom andra</span>
       </div>
+      <a class="hero-link" href="#tes">Se min riktning framåt <span aria-hidden="true">↓</span></a>
     </div>
   </section>
 
   <section class="band-white" id="tes">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">Kärntes</p>
-        <h2>Vi behöver förstå vad vår AI faktiskt kostar.</h2>
-        <p class="body">AI-användningen växer, men vår förmåga att förstå kostnaden växer inte i samma takt. När fler initiativ använder modeller, agenter, data och infrastruktur behöver vi bättre insyn i vad som driver kostnad.</p>
-        <p class="body">När vi dessutom automatiserar arbete som människor gör idag behöver vi förstå att AI-kostnaden inte springer iväg mer än den mänskliga kostnad den ska avlasta eller förbättra.</p>
-        <p class="body">Min roll som chef är att skapa riktning och förutsättningar för att organisationen etablerar en praktisk förmåga att följa kostnaden för AI-initiativ - från compute, tokens och modellval till kostnad per användningsfall.</p>
+    <div class="wrap">
+      <p class="eyebrow">1. Zooma ut · Vad ser jag förändras i omvärlden?</p>
+      <h2>AI blir en aktiv del av verksamheten.</h2>
+      <p class="lead">Jag ser ett större skifte: AI går från att hjälpa människor till att bli en aktiv del av hur verksamheter fungerar och skapar värde. Fem förändringar formar min riktning framåt.</p>
+      <div class="grid-3">
+        <div class="tile accent-red">
+          <h3>Från kodproduktion till autonom utveckling</h3>
+          <p>Jag ser AI ta över allt större delar av utvecklingsarbetet. Människans roll förskjuts mot arkitektur, kvalitet, styrning och att sätta rätt riktning.</p>
+        </div>
+        <div class="tile accent-blue">
+          <h3>Från lokala lösningar till gemensamma plattformar</h3>
+          <p>Jag ser ett växande behov av gemensam infrastruktur, säkerhet, övervakning och kostnadskontroll i affärskritiska processer. Innovationen kan vara decentraliserad, men grunden behöver vara gemensam.</p>
+        </div>
+        <div class="tile accent-green">
+          <h3>Från verktyg till aktör</h3>
+          <p>Jag ser AI-agenter gå från att stötta uppgifter till att självständigt utföra större delar av arbetsflöden. Människan får en större roll i att styra, följa upp och hantera undantag.</p>
+        </div>
+        <div class="tile accent-gold">
+          <h3>Från hierarki till orkestrering</h3>
+          <p>Jag ser ledarskapet utvecklas mot att sätta mål, fördela ansvar och samordna människor, AI-agenter och system. Arbetssätt och organisation behöver bli mer dynamiska.</p>
+        </div>
+        <div class="tile accent-red">
+          <h3>Från expertis till omdöme</h3>
+          <p>När kunskap och specialistförmågor blir mer tillgängliga ser jag kritiskt tänkande, prioritering och kloka beslut bli allt viktigare. Omdöme och ansvar blir centrala mänskliga förmågor.</p>
+        </div>
       </div>
-      <div class="quote">
-        <span class="badge badge-attention">Fokus</span>
-        <p>Vi behöver förstå vad vår AI kostar innan vi kan skala den.</p>
-        <span class="quote-meta">Först kostnadstransparens. Sedan bättre beslut om värde.</span>
+      <div class="split section-summary">
+        <div>
+          <h3>En betydande kostnadsförskjutning</h3>
+          <p class="body">Jag tror att den totala AI-kostnaden kan öka kraftigt när användningen växer och AI tar över större arbetsflöden, även om enskilda anrop blir billigare. En större del av kostnadsbasen kan flyttas från mänsklig arbetstid till teknik, plattformar och AI-konsumtion.</p>
+          <p class="body">Det ställer nya krav på styrning. Jag ser ett behov av att förstå värdet och kostnaden för det arbete AI utför, utöver att mäta användningen.</p>
+        </div>
+        <div class="quote">
+          <span class="badge badge-attention">Min slutsats</span>
+          <p>Konkurrenskraft kräver att vi kombinerar människor, AI och teknik för att skapa affärsvärde till rätt kostnad.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="band-dark" id="modell">
     <div class="wrap">
-      <div>
-        <p class="eyebrow">Koppling till AI-strategin och mätmodell</p>
-        <p class="lead">AI-strategin pekar mot effektivitet och kundvärde, något vi ser tillämpningar på över hela organisationen. Nu vill vi kunna skala ut ännu fler tillämpningar och för att kunna göra det med kontroll behöver vi förstå vad initiativen kostar, vad som driver kostnaden och hur kostnaden förändras när användningen växer.</p>
+      <p class="eyebrow">2. Zooma in · Vad betyder det för min verksamhet?</p>
+      <h2>Jag vill göra AI till en del av affären.</h2>
+      <p class="lead">För Svenska Spel ser jag möjligheten att integrera AI i hur vi når våra affärs- och verksamhetsmål. För AI Enablement innebär det att jag behöver utveckla vår förmåga att hjälpa organisationen att systematiskt skapa och realisera affärsvärde.</p>
+      <div class="grid-3">
+        <div class="metric">
+          <strong>Fortsatt bred adoption</strong>
+          <p>Jag vill fortsätta möjliggöra naturlig och värdeskapande AI-användning i organisationen, samtidigt som vi prioriterar de arbetsflöden där AI skapar störst värde.</p>
+        </div>
+        <div class="metric">
+          <strong>Förmåga att skala</strong>
+          <p>Jag vill stärka vår gemensamma tekniska plattform och förmågan att industrialisera arbetsflöden. Verksamheten ska kunna experimentera fritt inom trygga ramar.</p>
+        </div>
+        <div class="metric">
+          <strong>Ägarskap och kontroll</strong>
+          <p>Jag vill utveckla kostnadsstyrning och effektuppföljning så att vi kan skala med tydligt ägarskap och ekonomisk kontroll.</p>
+        </div>
       </div>
-      <div class="ap-map" aria-label="Koppling till personlig affärsplan">
-        <div class="ap-card"><span>1. Zooma ut</span><p>AI skalar snabbt och kostnader flyttar in i modeller, agenter, data och plattformar.</p></div>
-        <div class="ap-card"><span>2. Zooma in</span><p>För Svenska Spel betyder det att kostnad per användningsfall behöver bli begriplig.</p></div>
-        <div class="ap-card"><span>3. Mitt bidrag</span><p>Jag säkerställer riktning, prioritering och förutsättningar för att förmågan etableras.</p></div>
-        <div class="ap-card"><span>4. Mitt ledarskap</span><p>Jag går från att mobilisera brett till att skapa tydlighet, fokus och ägarskap.</p></div>
-        <div class="ap-card"><span>5. Mitt pris</span><p>Jag behöver mandat, rätt samverkan och tid för organisationen att bygga förmågan.</p></div>
-      </div>
+      <p class="success-line">Min ambition är att AI blir en integrerad del av verksamhetens utveckling och arbetssätt.</p>
     </div>
   </section>
 
   <section id="plan">
     <div class="wrap">
-      <p class="eyebrow">Mitt bidrag och åtagande</p>
-      <h2>Jag vill säkerställa att organisationen bygger förmågan.</h2>
-      <p class="lead">Mitt bidrag är att ta nästa steg efter adoptionen: sätta riktning, prioritera och skapa förutsättningar för att organisationen kan mäta AI-kostnader, förstå kostnad per användningsfall och använda insikten som underlag för prioritering, optimering och skalning.</p>
-      <div class="flow">
-        <div class="step">
-          <span class="num">1</span>
-          <h3>Sätt riktningen</h3>
-          <p>Definiera vilken kostnadstransparens vi behöver för att kunna fatta bättre beslut om AI.</p>
+      <p class="eyebrow">3. Mitt bidrag · Vad vill jag åstadkomma?</p>
+      <h2>Jag bygger en affärsnära AI-förmåga.</h2>
+      <p class="lead">Jag vill utveckla AI Enablement till en etablerad och affärsnära förmåga som hjälper Svenska Spel att snabbare nå sina verksamhetsmål. Mina viktigaste bidrag framåt är att:</p>
+      <div class="grid-4">
+        <div class="tile accent-red">
+          <h3>Göra AI naturligt</h3>
+          <p>Jag skapar förutsättningar för att AI används naturligt och värdeskapande i hela organisationen.</p>
         </div>
-        <div class="step">
-          <span class="num">2</span>
-          <h3>Etablera förmågan</h3>
-          <p>Skapa förutsättningar för organisationen att följa compute, tokens, modellkostnader och kostnad per användningsfall.</p>
+        <div class="tile accent-blue">
+          <h3>Utveckla AI Factory</h3>
+          <p>Jag vidareutvecklar AI Factory med gemensamma tekniska förmågor för agenter, data och skalbara arbetsflöden.</p>
         </div>
-        <div class="step">
-          <span class="num">3</span>
-          <h3>Börja verkligt</h3>
-          <p>Prioritera ett mindre antal befintliga AI-initiativ där förmågan kan etableras och valideras.</p>
+        <div class="tile accent-green">
+          <h3>Stärka styrningen</h3>
+          <p>Jag etablerar en tydligare modell för prioritering, effektuppföljning och kostnadsstyrning.</p>
         </div>
-        <div class="step">
-          <span class="num">4</span>
-          <h3>Skapa mått</h3>
-          <p>Säkerställ gemensamma mått, exempelvis cost per run, cost per ärende eller cost per användare.</p>
+        <div class="tile accent-gold">
+          <h3>Förankra ägarskapet</h3>
+          <p>Jag säkerställer att affären äger värdeskapandet medan AI Enablement möjliggör och accelererar utvecklingen.</p>
         </div>
-        <div class="step">
-          <span class="num">5</span>
-          <h3>Koppla till värde</h3>
-          <p>När kostnadsbilden finns, väg kostnad mot användning, kvalitet, tidsbesparing och verksamhetseffekt.</p>
-        </div>
-        <div class="step">
-          <span class="num">6</span>
-          <h3>Gör skalbart</h3>
-          <p>Säkerställ att kostnadsförståelse blir en naturlig del av hur vi utvecklar, följer upp och skalar AI.</p>
-        </div>
+      </div>
+      <div class="model-block challenge" aria-labelledby="utmaning-2026">
+        <span class="badge badge-neutral">Min konkreta verksamhetsutmaning · 2026</span>
+        <h3 id="utmaning-2026">Jag etablerar bättre kostnadstransparens och en modell för att bedöma AI-värde.</h3>
+        <p class="body">Tillsammans med affären, ekonomi och Tech skapar jag förutsättningar att förstå och följa upp kostnader från bred individuell AI-användning till mer avancerade agentiska och skalade arbetsflöden.</p>
+        <p class="body">Målet är fortsatt snabb innovation och bättre förutsättningar att prioritera, testa och skala AI med tydlig affärsnytta och ekonomisk kontroll.</p>
+        <p class="challenge-conclusion">Detta är mitt första konkreta steg i den större förflyttningen mot systematiskt och mätbart AI-värdeskapande.</p>
       </div>
     </div>
   </section>
@@ -560,49 +625,52 @@
   <section class="band-dark" id="ledarskap">
     <div class="wrap">
       <div class="leadership-panel">
-        <p class="eyebrow">Mitt ledarskap</p>
-        <h2>Från bred adoption och acceleration till fokus på detaljerna.</h2>
-        <p class="lead">Jag har under våren fokuserat på den breda adoptionen, ledningsgrupper, att bygga upp linjeorganisationen AI Enablement och att accelerera Svenska Spels AI-resa. Nu behöver jag lägga mer fokus på detaljer för att vi ska kunna ta nästa kliv. Det ställer nya krav på mitt ledarskap och jag måste röra mig närmare våra operativa leveransteam inom Tech.</p>
+        <p class="eyebrow">4. Mitt ledarskap · Hur behöver jag utvecklas?</p>
+        <h2>Jag skapar framdrift genom andra.</h2>
+        <p class="lead">Jag behöver utvecklas från att själv driva många frågor till att skapa riktning, mandat och förutsättningar för andra att lyckas. Min personliga utmaning är att balansera mitt driv och min vilja att accelerera med ett mer långsiktigt och strukturerat ledarskap.</p>
         <div class="grid-3">
           <div class="metric">
-            <strong>Tydlig ambition</strong>
-            <p>Jag behöver sätta förväntan på vilken kostnadsförståelse vi ska ha när AI-användningen växer.</p>
+            <strong>Prioritera och välja bort</strong>
+            <p>Jag behöver bli bättre på att prioritera, delegera och våga välja bort. Jag behöver släppa rollen som den som själv driver många initiativ.</p>
           </div>
           <div class="metric">
-            <strong>Rätt förutsättningar</strong>
-            <p>Teamen behöver kunna arbeta med detaljer som mätpunkter, kostnadsdata, modellval och uppföljning. Det behöver jag stödja och bereda väg för.</p>
+            <strong>Leda förändring genom andra</strong>
+            <p>Jag vill utveckla min förmåga att leda genom andra chefer och verksamheter. Jag behöver ge teamet större utrymme att ta ansvar för både vägval och leverans.</p>
           </div>
           <div class="metric">
-            <strong>Tydligt ägarskap</strong>
-            <p>Jag behöver säkerställa att ansvar finns i rätt delar av organisationen och att resultatet används i prioritering och skalning.</p>
+            <strong>Ge riktning och följa upp</strong>
+            <p>Jag behöver bli tydligare med förväntningar, mål och uppföljning av resultat, samtidigt som andra får mandat att bestämma hur vi når dit.</p>
           </div>
         </div>
+        <p class="leadership-shift"><strong>Min viktigaste förflyttning:</strong> Från att själv skapa framdrift till att bygga förmågan hos andra att skapa framdrift.</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="pris">
     <div class="wrap">
-      <p class="eyebrow">Mitt pris</p>
-      <h2>Förutsättningar jag behöver.</h2>
+      <p class="eyebrow">5. Mitt pris · Vad behöver jag för att lyckas?</p>
+      <h2>Jag behöver mandat och gemensam riktning.</h2>
+      <p class="lead">Jag behöver ett tydligt mandat att driva AI som en koncerngemensam förmåga, med stöd från både Tech och koncernledningen. För att lyckas behöver jag samsyn om ansvar, prioriteringar och investeringar.</p>
       <div class="grid-4">
         <div class="tile accent-red">
-          <strong>Mandat att rikta</strong>
-          <p>Utrymme att sätta ambition, prioritera startpunkter och skapa gemensamma förväntningar.</p>
+          <h3>Tydligt mandat</h3>
+          <p>Jag behöver stöd från Tech och koncernledningen för att utveckla AI som en gemensam förmåga för hela Svenska Spel.</p>
         </div>
         <div class="tile accent-blue">
-          <strong>Samverkan</strong>
-          <p>Stöd från Tech, ekonomi och verksamhet för att bygga en gemensam bild av AI-kostnad.</p>
+          <h3>Prioriteringar och kapacitet</h3>
+          <p>Jag behöver gemensamma prioriteringar och möjlighet att avsätta kapacitet för de initiativ som skapar störst värde.</p>
         </div>
         <div class="tile accent-green">
-          <strong>Ägarskap</strong>
-          <p>Tydliga ansvariga för att följa upp kostnad, användning och beslutsunderlag över tid.</p>
+          <h3>Gemensam syn på ansvar</h3>
+          <p>Jag behöver tydligt ägarskap för affärseffekterna och samsyn om ansvarsfördelningen mellan affären, AI Enablement och övriga Tech.</p>
         </div>
         <div class="tile accent-gold">
-          <strong>Beslutsforum</strong>
-          <p>Forum där kostnad och värde kan användas för prioritering, optimering och skalning.</p>
+          <h3>Stöd för långsiktigheten</h3>
+          <p>Jag behöver stöd i att balansera utvecklingen av AI-förmågan med löpande behov, och samsyn om de investeringar som förflyttningen kräver.</p>
         </div>
       </div>
+      <p class="success-line">Jag vill förankra dessa förutsättningar i dialog med min chef när AI blir en allt viktigare del av verksamhetens arbetssätt och kostnadsbas.</p>
     </div>
   </section>
 
@@ -634,7 +702,7 @@
 
     function go(delta) {
       const i = Math.max(0, Math.min(sections.length - 1, currentIndex() + delta));
-      sections[i].scrollIntoView({ behavior: "smooth", block: "start" });
+      sections[i].scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
     }
 
     document.getElementById("prev").addEventListener("click", () => go(-1));
