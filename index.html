@@ -499,6 +499,72 @@
       section { min-height: 100vh; break-after: page; }
       body { background: white; }
     }
+    .summary-section { min-height: 100svh; padding-top: 100px; padding-bottom: 70px; }
+    .summary-section .wrap { max-width: 1120px; }
+    .summary-section h1 { max-width: 1040px; font-size: 72px; line-height: 1.04; }
+    .summary-section h2 { max-width: 900px; font-size: 56px; line-height: 1.06; }
+    .summary-section .lead { max-width: 760px; font-size: 25px; line-height: 1.4; font-weight: 500; }
+    .summary-section.hero { background: var(--neutral-2); }
+    .summary-kicker { margin: 24px 0 0; max-width: 760px; padding-left: 18px; border-left: 3px solid var(--primary); font-size: 19px; line-height: 1.5; }
+    .summary-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 36px 0; padding: 0; list-style: none; }
+    .summary-points li { border-top: 2px solid var(--stroke-low); padding-top: 18px; }
+    .summary-points li:nth-child(1) { border-color: var(--primary); }
+    .summary-points li:nth-child(2) { border-color: var(--informative-55); }
+    .summary-points li:nth-child(3) { border-color: var(--success-45); }
+    .summary-points strong { display: block; font-size: 20px; margin-bottom: 8px; }
+    .summary-points p { font-size: 17px; margin: 0; line-height: 1.5; color: var(--surface-fg-muted); }
+    .band-dark .summary-points p { color: rgba(255,255,255,.78); }
+    .summary-section .summary-outcome { max-width: 800px; padding-left: 18px; border-left: 3px solid var(--primary); font-size: 19px; line-height: 1.5; margin: 30px 0; }
+    button.read-more { display: inline-flex; align-items: center; justify-content: center; gap: 24px; width: auto; height: auto; min-height: 48px; padding: 12px 22px; border-radius: 999px; font: inherit; font-size: 16px; font-weight: 700; box-shadow: none; }
+    button.read-more:hover { background: var(--primary-hover); }
+    .read-more span { font-size: 23px; line-height: 1; }
+    .summary-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 36px; }
+    .chapter-count { font-size: 13px; color: var(--surface-fg-muted); font-weight: 700; }
+    .hero .chapter-count, .band-dark .chapter-count { color: rgba(255,255,255,.6); }
+    body.modal-open { overflow: hidden; }
+    .detail-dialog { width: min(1180px, calc(100% - 64px)); max-width: none; max-height: calc(100svh - 64px); padding: 0; border: 1px solid var(--neutral-24); border-radius: 8px; background: var(--neutral-99); color: var(--surface-fg); box-shadow: 0 24px 90px rgba(0,0,0,.4); overflow: auto; overscroll-behavior: contain; }
+    .detail-dialog::backdrop { background: rgba(6,5,5,.76); backdrop-filter: blur(7px); }
+    .dialog-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 24px; background: var(--neutral-99); border-bottom: 1px solid var(--stroke-low); }
+    .dialog-header strong { font-size: 16px; }
+    .dialog-close { flex: 0 0 42px; background: var(--neutral-90); color: var(--surface-fg); font-size: 28px; box-shadow: none; }
+    .dialog-close:hover { background: var(--neutral-80); }
+    .detail-view { padding: 40px; }
+    .detail-view.hero { min-height: 0; }
+    .detail-view h1 { font-size: 48px; }
+    .detail-view h2 { font-size: 38px; }
+    .detail-view .lead { font-size: 22px; line-height: 1.4; }
+    .detail-view .body { font-size: 17px; line-height: 1.6; }
+    .detail-view .leadership-panel { background: transparent; padding: 0; border: 0; box-shadow: none; }
+    .detail-view .quote p { font-size: 28px; }
+    .detail-view .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 920px) {
+      .summary-section { padding: 108px 24px 64px; }
+      .summary-section h1 { font-size: 52px; }
+      .summary-section h2 { font-size: 42px; }
+      .summary-section .lead { font-size: 22px; }
+      .summary-points { gap: 20px; }
+      .summary-points strong { font-size: 18px; }
+      .detail-dialog { width: calc(100% - 24px); max-height: calc(100svh - 24px); }
+      .detail-view { padding: 28px; }
+      .detail-view .grid-4 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .summary-section h1 { font-size: 40px; }
+      .summary-section h2 { font-size: 34px; }
+      .summary-section .lead { font-size: 20px; }
+      .summary-points { grid-template-columns: 1fr; gap: 20px; margin: 28px 0; }
+      .summary-points li { padding-top: 12px; }
+      .summary-points p { font-size: 16px; }
+      .summary-section .summary-outcome, .summary-kicker { font-size: 17px; }
+      .summary-footer { margin-top: 28px; }
+      .dialog-header { padding: 12px 18px; }
+      .detail-view { padding: 28px 22px 40px; }
+      .detail-view h1 { font-size: 34px; }
+      .detail-view h2 { font-size: 30px; }
+      .detail-view .lead { font-size: 20px; }
+      .detail-view .quote { transform: none; }
+    }
+    @media print { .read-more, .chapter-count { display: none; } }
   </style>
 </head>
 <body>
@@ -698,6 +764,121 @@
     <button type="button" id="next" title="Nästa avsnitt">›</button>
   </div>
 
+  <dialog class="detail-dialog" id="details" aria-labelledby="detail-title">
+    <header class="dialog-header">
+      <strong id="detail-title"></strong>
+      <button class="dialog-close" type="button" aria-label="Stäng fördjupning" title="Stäng">×</button>
+    </header>
+    <article class="detail-view" id="detail-content"></article>
+  </dialog>
+
+  <script>
+    const summaries = [
+      {
+        id: "start", label: "Ambition", eyebrow: "Personlig affärsplan · Erik Andersson",
+        heading: "Förmåga att skapa<br><span class=\"hero-accent\">och skala AI-värde.</span>",
+        lead: "AI ska vara en naturlig del av hur Svenska Spel når sina affärs- och verksamhetsmål.",
+        outcome: "Min förflyttning: från att själv driva accelerationen till att utveckla ansvar och förmåga hos fler."
+      },
+      {
+        id: "tes", label: "Zooma ut", eyebrow: "1. Zooma ut · Omvärlden",
+        heading: "AI blir en aktiv del av verksamheten.",
+        lead: "AI går från att stötta enskilda uppgifter till att utföra arbetsflöden. Det förändrar både våra möjligheter, våra kostnader och vårt ledarskap.",
+        points: [
+          ["Nya sätt att skapa värde", "Agenter och automatisering gör det möjligt för fler att göra mer."],
+          ["En gemensam grund", "Plattformar, omdöme och samarbete behövs när AI blir affärskritiskt."],
+          ["Värde till rätt kostnad", "Vi behöver förstå nyttan när kostnader flyttas från arbetstid till teknik."]
+        ],
+        outcome: "Risken om vi inte lyckas: spridd användning och ökande kostnader utan tydlig affärseffekt."
+      },
+      {
+        id: "modell", label: "Zooma in", eyebrow: "2. Zooma in · AI Enablement",
+        heading: "Från AI-användning till verklig affärsnytta.",
+        lead: "Vi har skapat energi och accelererat adoptionen. Nästa steg kräver tydligare prioritering, uppföljning och mer självständighet i organisationen.",
+        points: [
+          ["Fortsätta adoptionen", "Fokusera på arbetsflöden där AI gör störst skillnad."],
+          ["Bygga för skalning", "Gemensamma tekniska förmågor och trygga ramar för experiment."],
+          ["Tydliggöra ägarskapet", "Affären äger värdet. AI Enablement möjliggör och accelererar."]
+        ]
+      },
+      {
+        id: "plan", label: "Mitt bidrag", eyebrow: "3. Mitt bidrag · Resultatet jag vill skapa",
+        heading: "En affärsnära förmåga som skapar resultat.",
+        lead: "Jag skapar riktning och förutsättningar för att välja, utveckla och skala AI-arbetsflöden med tydligt ägarskap och ekonomisk kontroll.",
+        points: [
+          ["2026 · Förstå kostnad och värde", "Kostnadstransparens och en gemensam modell för att bedöma AI-värde."],
+          ["2027 · Skala affärsvärdet", "Utveckla AI Factory och skala arbetsflöden som ger verksamhetseffekt."],
+          ["Resultatet · Faktisk nytta", "Frigjord tid som blir kapacitet, högre kvalitet eller bättre kundupplevelse."]
+        ],
+        outcome: "Mätningen hjälper oss att se om nyttan uppstår och välja vad vi ska fortsätta, förbättra eller skala."
+      },
+      {
+        id: "ledarskap", label: "Mitt ledarskap", eyebrow: "4. Mitt ledarskap · Min egen utveckling",
+        heading: "Från att driva själv till att utveckla ansvar hos fler.",
+        lead: "Jag behöver bli tydligare med riktning, mer disciplinerad i prioritering och mer coachande i mitt ledarskap.",
+        points: [
+          ["Släppa rollen som nav", "Delegera mål och ansvar, och stå kvar i delegeringen."],
+          ["Fråga innan jag löser", "Ge andra tid att tänka, bedöma och ta egna beslut."],
+          ["Välja bort och skydda fokus", "Begränsa min egen medverkan där andra kan driva vidare."]
+        ],
+        outcome: "Mindre operativ motor. Mer ledare för riktning, ansvar och lärande."
+      },
+      {
+        id: "pris", label: "Mitt pris", eyebrow: "5. Mitt pris · Förutsättningar att lyckas",
+        heading: "Utrymme att leda hela förflyttningen.",
+        lead: "Jag behöver stöd i att prioritera min tid mellan Techs löpande behov och hela Svenska Spels långsiktiga utveckling.",
+        points: [
+          ["Gemensamma prioriteringar", "Samsyn med min chef om var min tid gör störst nytta."],
+          ["Tid nära affären", "Utrymme att bygga förtroende och förankring över verksamhetsgränser."],
+          ["Balans och fokus", "Skydda koncernperspektivet och låta andra ta vidare fler löpande frågor."]
+        ]
+      }
+    ];
+    const fullContent = new Map();
+    const dialog = document.getElementById("details");
+    const detailContent = document.getElementById("detail-content");
+    let returnFocus;
+
+    summaries.forEach((summary, index) => {
+      const section = document.getElementById(summary.id);
+      const original = section.querySelector(".wrap");
+      fullContent.set(summary.id, { content: original, theme: section.className });
+      const points = summary.points ? `<ul class="summary-points">${summary.points.map(([title, text]) => `<li><strong>${title}</strong><p>${text}</p></li>`).join("")}</ul>` : "";
+      const outcome = summary.outcome ? `<p class="${index === 0 ? "summary-kicker" : "summary-outcome"}">${summary.outcome}</p>` : "";
+      const headingTag = index === 0 ? "h1" : "h2";
+      section.classList.add("summary-section");
+      section.innerHTML = `<div class="wrap"><p class="eyebrow">${summary.eyebrow}</p><${headingTag}>${summary.heading}</${headingTag}><p class="lead">${summary.lead}</p>${points}${outcome}<div class="summary-footer"><button type="button" class="read-more" data-detail="${summary.id}" aria-haspopup="dialog" aria-controls="details" aria-label="Läs mer: ${summary.label}">Läs mer <span aria-hidden="true">↗</span></button><span class="chapter-count">0${index + 1} / 06</span></div></div>`;
+    });
+
+    document.querySelectorAll("[data-detail]").forEach(button => {
+      button.addEventListener("click", () => {
+        const id = button.dataset.detail;
+        const source = fullContent.get(id);
+        returnFocus = button;
+        document.getElementById("detail-title").textContent = summaries.find(summary => summary.id === id).label;
+        detailContent.className = `detail-view ${source.theme}`;
+        detailContent.replaceChildren(...Array.from(source.content.childNodes, child => child.cloneNode(true)));
+        document.body.classList.add("modal-open");
+        dialog.showModal();
+        dialog.scrollTop = 0;
+      });
+    });
+    dialog.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
+    detailContent.addEventListener("click", event => {
+      if (event.target.closest(".hero-link")) dialog.close();
+    });
+    dialog.addEventListener("click", event => {
+      if (event.target !== dialog) return;
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+    });
+    dialog.addEventListener("close", () => {
+      document.body.classList.remove("modal-open");
+      detailContent.replaceChildren();
+      returnFocus?.focus({ preventScroll: true });
+    });
+  </script>
+
   <script>
     const sections = Array.from(document.querySelectorAll("section"));
     const navLinks = Array.from(document.querySelectorAll("nav a"));
@@ -729,6 +910,7 @@
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     window.addEventListener("keydown", event => {
+      if (dialog.open || event.target.closest("button, a, input, textarea, select")) return;
       if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(event.key)) {
         event.preventDefault();
         go(1);
