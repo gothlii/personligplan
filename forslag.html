@@ -778,11 +778,12 @@
         id: "start", label: "Ambition", eyebrow: "Personlig affärsplan · Erik Andersson",
         heading: "Förmåga att skapa<br><span class=\"hero-accent\">och skala AI-värde.</span>",
         lead: "AI ska vara en naturlig del av hur Svenska Spel når sina affärs- och verksamhetsmål.",
+        description: "Jag vill utveckla AI Enablement från att möjliggöra AI-användning till att bygga en organisation som systematiskt skapar, mäter och skalar affärsvärde med AI.",
         outcome: "Min förflyttning: från att själv driva accelerationen till att utveckla ansvar och förmåga hos fler."
       },
       {
         id: "tes", label: "Zooma ut", eyebrow: "1. Zooma ut · Omvärlden",
-        heading: "AI blir en aktiv del av verksamheten.",
+        heading: "AI går från att hjälpa människor till att bli en aktiv del av hur verksamheter fungerar och skapar värde.",
         lead: "AI går från att stötta enskilda uppgifter till att utföra arbetsflöden. Det förändrar både våra möjligheter, våra kostnader och vårt ledarskap.",
         points: [
           ["Nya sätt att skapa värde", "Agenter och automatisering gör det möjligt för fler att göra mer."],
@@ -807,15 +808,15 @@
         lead: "Jag skapar riktning och förutsättningar för att välja, utveckla och skala AI-arbetsflöden med tydligt ägarskap och ekonomisk kontroll.",
         points: [
           ["2026 · Förstå kostnad och värde", "Kostnadstransparens och en gemensam modell för att bedöma AI-värde."],
-          ["2027 · Skala affärsvärdet", "Utveckla AI Factory och skala arbetsflöden som ger verksamhetseffekt."],
+          ["Mätbart affärsvärde i skalade AI-arbetsflöden.", "Min ambition för 2027 är att omsätta insikterna om kostnad och värde till att systematiskt skala AI-initiativen baserat på rätt verksamhetseffekt för Svenska Spel."],
           ["Resultatet · Faktisk nytta", "Frigjord tid som blir kapacitet, högre kvalitet eller bättre kundupplevelse."]
         ],
         outcome: "Mätningen hjälper oss att se om nyttan uppstår och välja vad vi ska fortsätta, förbättra eller skala."
       },
       {
         id: "ledarskap", label: "Mitt ledarskap", eyebrow: "4. Mitt ledarskap · Min egen utveckling",
-        heading: "Från att driva själv till att utveckla ansvar hos fler.",
-        lead: "Jag behöver bli tydligare med riktning, mer disciplinerad i prioritering och mer coachande i mitt ledarskap.",
+        heading: "Från att driva framåt till att utveckla ansvar hos fler.",
+        lead: "Min viktigaste ledarskapsförflyttning är att gå från att själv vara en stark motor i AI-resan till att bygga förutsättningar för andra att ta större ansvar. Jag behöver bli tydligare med riktning, mer disciplinerad i prioritering och mer coachande i hur jag leder teamet och verksamheten framåt.",
         points: [
           ["Släppa rollen som nav", "Delegera mål och ansvar, och stå kvar i delegeringen."],
           ["Fråga innan jag löser", "Ge andra tid att tänka, bedöma och ta egna beslut."],
@@ -846,8 +847,9 @@
       const points = summary.points ? `<ul class="summary-points">${summary.points.map(([title, text]) => `<li><strong>${title}</strong><p>${text}</p></li>`).join("")}</ul>` : "";
       const outcome = summary.outcome ? `<p class="${index === 0 ? "summary-kicker" : "summary-outcome"}">${summary.outcome}</p>` : "";
       const headingTag = index === 0 ? "h1" : "h2";
+      const description = summary.description ? `<p class="body">${summary.description}</p>` : "";
       section.classList.add("summary-section");
-      section.innerHTML = `<div class="wrap"><p class="eyebrow">${summary.eyebrow}</p><${headingTag}>${summary.heading}</${headingTag}><p class="lead">${summary.lead}</p>${points}${outcome}<div class="summary-footer"><button type="button" class="read-more" data-detail="${summary.id}" aria-haspopup="dialog" aria-controls="details" aria-label="Läs mer: ${summary.label}">Läs mer <span aria-hidden="true">↗</span></button><span class="chapter-count">0${index + 1} / 06</span></div></div>`;
+      section.innerHTML = `<div class="wrap"><p class="eyebrow">${summary.eyebrow}</p><${headingTag}>${summary.heading}</${headingTag}><p class="lead">${summary.lead}</p>${description}${points}${outcome}<div class="summary-footer"><button type="button" class="read-more" data-detail="${summary.id}" aria-haspopup="dialog" aria-controls="details" aria-label="Läs mer: ${summary.label}">Läs mer <span aria-hidden="true">↗</span></button><span class="chapter-count">0${index + 1} / 06</span></div></div>`;
     });
 
     document.querySelectorAll("[data-detail]").forEach(button => {
